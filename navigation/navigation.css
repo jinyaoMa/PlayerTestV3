@@ -1,0 +1,32 @@
+#navigation {
+	position: fixed;
+	bottom: 0;
+	width: 100vw;
+	text-align: center;
+	border-top: 1px solid;
+}
+
+#navigation div {
+	width: 25vw;
+	float: left;
+	padding: 6px 0;
+	opacity: 0.6;
+}
+
+#navigation img {
+	width: 50%;
+}
+
+#navigation span {
+	font-size: 3vmin;
+}
+
+#navigation div.on {
+	opacity: 1;
+	padding-bottom: 3px;
+	border-bottom: 3px solid;
+}
+
+#navigation.black {
+	background-color: black;
+}
