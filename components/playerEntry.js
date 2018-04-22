@@ -60,7 +60,7 @@ function PlayerEntry(){
 		clearInterval(this.interval);
 	};
 	
-	this.link = function (init) { // $('#player')
+	this.link = function (init) { // $('#playerActivity')
 		$('#playerEntry').click(function () {
 			if (init !== undefined && init.length === 1) {
 				init.show();

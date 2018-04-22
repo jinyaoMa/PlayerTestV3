@@ -4,13 +4,15 @@ R.en = {
 	library: 'Library',
 	music: 'Music',
 	friend: 'Friend',
-	account: 'Account'
+	account: 'Account',
+	search: 'Search'
 };
 R.zh = {
 	library: '库',
 	music: '音乐',
 	friend: '朋友',
-	account: '帐号'
+	account: '帐号',
+	search: '搜索'
 };
 R.string = R.en;
 
@@ -23,6 +25,9 @@ R.color = {
 /* Initialize localStorage */
 if (localStorage.nightShift === undefined) {
 	localStorage.nightShift = false;
+}
+if (localStorage.currentPage === undefined) {
+	localStorage.currentPage = 0;
 }
 
 /* Functions */
@@ -37,8 +42,10 @@ function refreshColor() {
 	}
 	navigation.refreshColor();
 	playerEntry.refreshColor();
+	library.refreshColor();
 }
 
 function linking() {
-	navigation.link();
+	navigation.link($('.activity:first > .container > div'));
+	playerEntry.link();
 }

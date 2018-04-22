@@ -1,0 +1,40 @@
+:root {
+	
+}
+
+#library > div:last-child {
+	padding-top: var(--index-header-height);
+	padding-bottom: var(--navigation-height);
+	min-height: calc(100vh - var(--navigation-height) - var(--index-header-height));
+}
+
+#library > div:first-child {
+	height: calc(var(--index-header-height) - 1px);
+	background-color: var(--navigation-bg-white);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	z-index: 1;
+}
+
+#library > div.black {
+	background-color: var(--navigation-bg-black);
+}
+
+#library > div:first-child img {
+	border-radius: 50%;
+	margin: calc(var(--index-header-height) * 0.2);
+	height: calc(var(--index-header-height) * 0.6);
+	width: calc(var(--index-header-height) * 0.6);
+	box-shadow: var(--index-header-icon-shadow);
+}
+
+#library > div:first-child div {
+	text-align: center;
+	font-size: var(--index-header-font-size);
+	width: calc(100% - var(--index-header-height) * 2);
+	display: inline-block;
+	line-height: var(--index-header-height);
+	vertical-align: top;
+}

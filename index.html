@@ -4,8 +4,10 @@
 <meta charset="utf-8">
 <title>PlayerTestV3</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
 <link rel='stylesheet' type='text/css' href='components/navigation.css'>
 <link rel='stylesheet' type='text/css' href='components/playerEntry.css'>
+<link rel='stylesheet' type='text/css' href='components/library.css'>
 
 <link rel='stylesheet' type='text/css' href='index.css'>
 </head>
@@ -16,25 +18,38 @@
 
 <script src='components/navigation.js'></script>
 <script src='components/playerEntry.js'></script>
+<script src='components/library.js'></script>
 
 <script src='index.js'></script>
 
-<div class='activity' id='mainActivity'>
-	<!-- BEGIN container -->
-	<div id='container'>
-	
+<!-- Storyboard Entry -->
+<div class='activity'>
+	<div class='container'>
+		<!-- Component library --><div id='library'>
+			<div>
+				<img src='assets/library.white.png'><div><script>document.write(R.string.library)</script></div>
+			</div>
+			<div><script>for(abc=0;abc<30;abc++){document.write('123<br>')}</script></div>
+		</div><!-- Component music --><div id='music'>
+			<div><script>document.write(R.string.music)</script></div>
+			<div></div>
+		</div><!-- Component friend --><div id='friend'>
+			<div><script>document.write(R.string.friend)</script></div>
+			<div></div>
+		</div><!-- Component account --><div id='account'>
+			<div><script>document.write(R.string.account)</script></div>
+			<div></div>
+		</div>
 	</div>
-	<!-- END container -->
 
-	<!-- BEGIN playerEntry -->
+	<!-- Component playerEntry -->
 	<div id='playerEntry'>
 		<canvas width='320' height='320'>
 			?
 		</canvas>
 	</div>
-	<!-- END playerEntry -->
 	
-	<!-- BEGIN navigation -->
+	<!-- Component navigation -->
 	<div id='navigation'>
 		<div>
 			<img src='assets/library.white.png'>
@@ -53,7 +68,10 @@
 			<span><script>document.write(R.string.account)</script></span>
 		</div>
 	</div>
-	<!-- END navigation -->
+</div>
+
+<div class='activity'>
+
 </div>
 
 <!-- Ready -->
@@ -61,10 +79,14 @@
 /* Initialize components */
 var playerEntry = new PlayerEntry();
 var navigation = new Navigation();
+var library = new Library();
 
 /* Prepare */
 refreshColor();
 linking();
+
+/* TEST AREA */
+
 </script>
 </body>
 </html>
