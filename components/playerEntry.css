@@ -1,0 +1,24 @@
+:root {
+	--playerEntry-height: 10vmax;
+	--playerEntry-stop-opacity: 0.6;
+	--playerEntry-run-opacity: 1;
+}
+
+#playerEntry {
+	position: fixed;
+	top: 0;
+	right: 0;
+	height: var(--playerEntry-height);
+	width: var(--playerEntry-height);
+	opacity: var(--playerEntry-stop-opacity);
+}
+
+#playerEntry canvas {
+	width: 60%;
+	height: 50%;
+	margin: 25% 20%;
+}
+
+#playerEntry.run {
+	opacity: var(--playerEntry-run-opacity);
+}

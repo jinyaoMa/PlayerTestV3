@@ -1,34 +1,70 @@
+<!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+<meta charset="utf-8">
+<title>PlayerTestV3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<link rel='stylesheet' type='text/css' href='components/navigation.css'>
+<link rel='stylesheet' type='text/css' href='components/playerEntry.css'>
+
+<link rel='stylesheet' type='text/css' href='index.css'>
 </head>
 <body>
 <script src='plugins/jquery-3.3.1.min.js'></script>
-<link rel='stylesheet' type='text/css' href='index.css'>
+<script src='plugins/transform.js'></script>
+<script src='plugins/alloy_touch.js'></script>
+
+<script src='components/navigation.js'></script>
+<script src='components/playerEntry.js'></script>
+
 <script src='index.js'></script>
 
-<!-- BEGIN navigation -->
-<link rel='stylesheet' type='text/css' href='components/navigation.css'>
+<div class='activity' id='mainActivity'>
+	<!-- BEGIN container -->
+	<div id='container'>
+	
+	</div>
+	<!-- END container -->
+
+	<!-- BEGIN playerEntry -->
+	<div id='playerEntry'>
+		<canvas width='320' height='320'>
+			?
+		</canvas>
+	</div>
+	<!-- END playerEntry -->
+	
+	<!-- BEGIN navigation -->
 	<div id='navigation'>
 		<div>
-			<img src='assets/library.white.png'><br>
-			<span><script>document.write(R.lang.library)</script></span>
+			<img src='assets/library.white.png'>
+			<span><script>document.write(R.string.library)</script></span>
 		</div>
 		<div>
-			<img src='assets/music.white.png'><br>
-			<span><script>document.write(R.lang.music)</script></span>
+			<img src='assets/music.white.png'>
+			<span><script>document.write(R.string.music)</script></span>
 		</div>
 		<div>
-			<img src='assets/friend.white.png'><br>
-			<span><script>document.write(R.lang.friend)</script></span>
+			<img src='assets/friend.white.png'>
+			<span><script>document.write(R.string.friend)</script></span>
 		</div>
 		<div>
-			<img src='assets/account.white.png'><br>
-			<span><script>document.write(R.lang.account)</script></span>
+			<img src='assets/account.white.png'>
+			<span><script>document.write(R.string.account)</script></span>
 		</div>
 	</div>
-<script src='components/navigation.js'></script>
-<!-- END navigation -->
+	<!-- END navigation -->
+</div>
 
+<!-- Ready -->
+<script>
+/* Initialize components */
+var playerEntry = new PlayerEntry();
+var navigation = new Navigation();
 
-</body></html>
+/* Prepare */
+refreshColor();
+linking();
+</script>
+</body>
+</html>

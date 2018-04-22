@@ -12,8 +12,33 @@ R.zh = {
 	friend: '朋友',
 	account: '帐号'
 };
-R.lang = R.en;
+R.string = R.en;
 
-/* Initialize page layout */
-document.body.style.backgroundColor = "black";
-document.body.style.color = "white";
+/* Colors */
+R.color = {
+	white: 'white',
+	black: 'black'
+};
+
+/* Initialize localStorage */
+if (localStorage.nightShift === undefined) {
+	localStorage.nightShift = false;
+}
+
+/* Functions */
+function refreshColor() {
+	if (localStorage.nightShift !== undefined &&
+		JSON.parse(localStorage.nightShift)){
+		document.body.style.backgroundColor = R.color.black;
+		document.body.style.color = R.color.white;
+	} else {
+		document.body.style.backgroundColor = R.color.white;
+		document.body.style.color = R.color.black;
+	}
+	navigation.refreshColor();
+	playerEntry.refreshColor();
+}
+
+function linking() {
+	navigation.link();
+}

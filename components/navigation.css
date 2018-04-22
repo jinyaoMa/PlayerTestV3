@@ -1,32 +1,76 @@
+:root {
+	--navigation-height: 10vmax;
+	--navigation-opacity-off: 0.4;
+	--navigation-opacity-on: 1;
+	--navigation-bg-black: rgba(0,0,0,0.8);
+	--navigation-bg-white: rgba(255,255,255,0.8);
+	--navigation-divAnimeTime: 0.5s;
+	--navigation-front-end-padding: 6px;
+	--navigation-font-size: 2vmax;
+	--navigation-shadow: 0 0 2vmax;
+}
+
 #navigation {
 	position: fixed;
+	left: 0;
 	bottom: 0;
 	width: 100vw;
 	text-align: center;
-	border-top: 1px solid;
+	height: var(--navigation-height);
+	box-shadow: var(--navigation-shadow);
+	background-color: var(--navigation-bg-white);
 }
 
-#navigation div {
+#navigation > div {
 	width: 25vw;
 	float: left;
-	padding: 6px 0;
-	opacity: 0.6;
+	padding: var(--navigation-front-end-padding) 0;
+	opacity: var(--navigation-opacity-off);
+	animation: navigationDivOff var(--navigation-divAnimeTime) linear;
 }
 
 #navigation img {
-	width: 50%;
+	height: calc(
+		var(--navigation-height)
+		- var(--navigation-font-size)
+		- (var(--navigation-front-end-padding) * 2)
+		- (var(--navigation-front-end-padding) / 2)
+		- 1px
+	);
+	max-width: 90%;
 }
 
 #navigation span {
-	font-size: 3vmin;
+	display: block;
+	font-size: var(--navigation-font-size);
+	line-height: var(--navigation-font-size);
 }
 
-#navigation div.on {
-	opacity: 1;
-	padding-bottom: 3px;
-	border-bottom: 3px solid;
+#navigation > div.on {
+	opacity: var(--navigation-opacity-on);
+	padding-bottom: calc(var(--navigation-front-end-padding) / 2);
+	border-bottom: calc(var(--navigation-front-end-padding) / 2) solid;
+	animation: navigationDivOn var(--navigation-divAnimeTime) linear;
 }
 
 #navigation.black {
-	background-color: black;
+	background-color: var(--navigation-bg-black);
+}
+
+@keyframes navigationDivOn {
+	from {
+		opacity: var(--navigation-opacity-off);
+		border-radius: calc(var(--navigation-font-size) * 1.5);
+	} to {
+		opacity: var(--navigation-opacity-on);
+		border-radius: 0;
+	}
+}
+
+@keyframes navigationDivOff {
+	from {
+		opacity: var(--navigation-opacity-on);
+	} to {
+		opacity: var(--navigation-opacity-off);
+	}
 }
