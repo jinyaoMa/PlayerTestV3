@@ -5,9 +5,12 @@
 <title>PlayerTestV3</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 
-<link rel='stylesheet' type='text/css' href='components/navigation.css'>
-<link rel='stylesheet' type='text/css' href='components/playerEntry.css'>
-<link rel='stylesheet' type='text/css' href='components/library.css'>
+<link rel='stylesheet' type='text/css' href='mainActivity/navigation.css'>
+<link rel='stylesheet' type='text/css' href='mainActivity/playerEntry.css'>
+<link rel='stylesheet' type='text/css' href='mainActivity/library.css'>
+<link rel='stylesheet' type='text/css' href='mainActivity/music.css'>
+<link rel='stylesheet' type='text/css' href='mainActivity/friend.css'>
+<link rel='stylesheet' type='text/css' href='mainActivity/account.css'>
 
 <link rel='stylesheet' type='text/css' href='index.css'>
 </head>
@@ -16,28 +19,37 @@
 <script src='plugins/transform.js'></script>
 <script src='plugins/alloy_touch.js'></script>
 
-<script src='components/navigation.js'></script>
-<script src='components/playerEntry.js'></script>
-<script src='components/library.js'></script>
+<script src='mainActivity/navigation.js'></script>
+<script src='mainActivity/playerEntry.js'></script>
+<script src='mainActivity/library.js'></script>
+<script src='mainActivity/music.js'></script>
+<script src='mainActivity/friend.js'></script>
+<script src='mainActivity/account.js'></script>
 
 <script src='index.js'></script>
 
 <!-- Storyboard Entry -->
-<div class='activity'>
+<div class='activity' id='mainActivity'>
 	<div class='container'>
 		<!-- Component library --><div id='library'>
 			<div>
-				<img src='assets/library.white.png'><div><script>document.write(R.string.library)</script></div>
+				<img src='assets/library.white.png'><div><script>document.write(R.string.search)</script></div>
 			</div>
-			<div><script>for(abc=0;abc<30;abc++){document.write('123<br>')}</script></div>
+			<div></div>
 		</div><!-- Component music --><div id='music'>
-			<div><script>document.write(R.string.music)</script></div>
+			<div>
+				<img src='assets/music.white.png'><div><script>document.write(R.string.music)</script></div>
+			</div>
 			<div></div>
 		</div><!-- Component friend --><div id='friend'>
-			<div><script>document.write(R.string.friend)</script></div>
+			<div>
+				<img src='assets/friend.white.png'><div><script>document.write(R.string.friend)</script></div>
+			</div>
 			<div></div>
 		</div><!-- Component account --><div id='account'>
-			<div><script>document.write(R.string.account)</script></div>
+			<div>
+				<img src='assets/account.white.png'><div><script>document.write(R.string.account)</script></div>
+			</div>
 			<div></div>
 		</div>
 	</div>
@@ -70,16 +82,21 @@
 	</div>
 </div>
 
-<div class='activity'>
-
+<div class='activity' id='playerActivity'>
+	
 </div>
 
-<!-- Ready -->
 <script>
+/* Ready */
+setupLocalStorage();
+
 /* Initialize components */
 var playerEntry = new PlayerEntry();
 var navigation = new Navigation();
 var library = new Library();
+var music = new Music();
+var friend = new Friend();
+var account = new Account();
 
 /* Prepare */
 refreshColor();

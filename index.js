@@ -22,15 +22,16 @@ R.color = {
 	black: 'black'
 };
 
-/* Initialize localStorage */
-if (localStorage.nightShift === undefined) {
-	localStorage.nightShift = false;
-}
-if (localStorage.currentPage === undefined) {
-	localStorage.currentPage = 0;
+/* Functions */
+function setupLocalStorage() {
+	if (localStorage.nightShift === undefined) {
+		localStorage.nightShift = false;
+	}
+	if (localStorage.currentPage === undefined) {
+		localStorage.currentPage = 0;
+	}
 }
 
-/* Functions */
 function refreshColor() {
 	if (localStorage.nightShift !== undefined &&
 		JSON.parse(localStorage.nightShift)){
@@ -43,9 +44,17 @@ function refreshColor() {
 	navigation.refreshColor();
 	playerEntry.refreshColor();
 	library.refreshColor();
+	music.refreshColor();
+	friend.refreshColor();
+	account.refreshColor();
 }
 
 function linking() {
 	navigation.link($('.activity:first > .container > div'));
 	playerEntry.link();
+	library.linkDrawer();
+	library.linkSearch();
+	music.linkDrawer();
+	friend.linkDrawer();
+	account.linkDrawer();
 }

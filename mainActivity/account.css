@@ -1,0 +1,46 @@
+:root {
+	--account-search-border-width: 2px;
+	--account-opacity-on: 1;
+	--account-opacity-off: 0.6;
+}
+
+#account > div:last-child {
+	padding-top: var(--index-header-height);
+	padding-bottom: var(--navigation-height);
+	min-height: calc(100vh - var(--navigation-height) - var(--index-header-height));
+}
+
+#account > div:first-child {
+	height: calc(var(--index-header-height) - 1px);
+	background-color: var(--navigation-bg-white);
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	z-index: 1;
+}
+
+#account > div.black {
+	background-color: var(--navigation-bg-black);
+}
+
+#account > div:first-child img {
+	border-radius: 50%;
+	margin: calc(var(--index-header-height) * 0.2);
+	height: calc(var(--index-header-height) * 0.6);
+	width: calc(var(--index-header-height) * 0.6);
+	box-shadow: var(--index-header-icon-shadow);
+	opacity: var(--account-opacity-off);
+}
+
+#account > div:first-child img:active {
+	opacity: var(--account-opacity-on);
+}
+
+#account > div:first-child div {
+	vertical-align: top;
+	text-align: center;
+	font-size: calc(var(--index-header-font-size));
+	width: calc(100% - var(--index-header-height) * 2);
+	display: inline-block;
+	line-height: calc(var(--index-header-height));
+}
