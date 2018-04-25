@@ -4,26 +4,25 @@
 	--account-opacity-off: 0.6;
 }
 
-#account > div:last-child {
+#account .body {
 	padding-top: var(--index-header-height);
 	padding-bottom: var(--navigation-height);
 	min-height: calc(100vh - var(--navigation-height) - var(--index-header-height));
 }
 
-#account > div:first-child {
+#account .header {
 	height: calc(var(--index-header-height) - 1px);
 	background-color: var(--navigation-bg-white);
 	position: fixed;
 	top: 0;
 	width: 100vw;
-	z-index: 1;
 }
 
 #account > div.black {
 	background-color: var(--navigation-bg-black);
 }
 
-#account > div:first-child img {
+#account .header img {
 	border-radius: 50%;
 	margin: calc(var(--index-header-height) * 0.2);
 	height: calc(var(--index-header-height) * 0.6);
@@ -32,11 +31,11 @@
 	opacity: var(--account-opacity-off);
 }
 
-#account > div:first-child img:active {
+#account .header img:active {
 	opacity: var(--account-opacity-on);
 }
 
-#account > div:first-child div {
+#account .header div {
 	vertical-align: top;
 	text-align: center;
 	font-size: calc(var(--index-header-font-size));

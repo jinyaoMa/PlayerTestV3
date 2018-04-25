@@ -4,26 +4,25 @@
 	--friend-opacity-off: 0.6;
 }
 
-#friend > div:last-child {
+#friend .body {
 	padding-top: var(--index-header-height);
 	padding-bottom: var(--navigation-height);
 	min-height: calc(100vh - var(--navigation-height) - var(--index-header-height));
 }
 
-#friend > div:first-child {
+#friend .header {
 	height: calc(var(--index-header-height) - 1px);
 	background-color: var(--navigation-bg-white);
 	position: fixed;
 	top: 0;
 	width: 100vw;
-	z-index: 1;
 }
 
 #friend > div.black {
 	background-color: var(--navigation-bg-black);
 }
 
-#friend > div:first-child img {
+#friend .header img {
 	border-radius: 50%;
 	margin: calc(var(--index-header-height) * 0.2);
 	height: calc(var(--index-header-height) * 0.6);
@@ -32,11 +31,11 @@
 	opacity: var(--friend-opacity-off);
 }
 
-#friend > div:first-child img:active {
+#friend .header img:active {
 	opacity: var(--friend-opacity-on);
 }
 
-#friend > div:first-child div {
+#friend .header div {
 	vertical-align: top;
 	text-align: center;
 	font-size: calc(var(--index-header-font-size));

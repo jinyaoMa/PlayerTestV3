@@ -1,0 +1,119 @@
+:root {
+	--controller-height: 25vh;
+	--controller-options-height: 8vh;
+	--controller-progress-height: 7vh;
+	--controller-controls-height: 10vh;
+	--controller-options-icon-shadow: 0 0 5vmin;
+	--controller-progress-bar-thick: 2vmin;
+	--controller-progress-bar-shadow: 0 0 6vmin;
+}
+
+#controller {
+	height: var(--controller-height);
+	width: 100vw;
+	position: absolute;
+	bottom: 0;
+}
+
+#controller .options {
+	height: var(--controller-options-height);
+}
+
+#controller .options > div {
+	width: var(--controller-options-height);
+	margin: 0 calc((100% - var(--controller-options-height) * 4) / 8);
+	height: 100%;
+	float: left;
+	text-align: center;
+	border-radius: 50%;
+}
+
+#controller .options > div img {
+	height: 80%;
+	margin: 10% 0;
+}
+
+#controller .options > div:active {
+	box-shadow: var(--controller-options-icon-shadow);
+}
+
+#controller .progress {
+	height: var(--controller-progress-height);
+}
+
+#controller .progress > div {
+	float: left;
+}
+
+#controller #bar {
+	height: var(--controller-progress-height);
+	width: 60%;
+}
+
+#controller #total {
+	height: var(--controller-progress-bar-thick);
+	margin: calc((var(--controller-progress-height) - var(--controller-progress-bar-thick)) / 2) var(--controller-progress-bar-thick);
+	width: calc(100% - var(--controller-progress-bar-thick) * 2);
+	box-shadow: var(--controller-progress-bar-shadow);
+	border-radius: var(--controller-progress-bar-thick);
+}
+
+#controller #loaded {
+	height: 100%;
+	width: 90%;
+	background-color: lightgray;
+	border-radius: var(--controller-progress-bar-thick);
+}
+
+#controller #current {
+	position: relative;
+	top: -100%;
+	height: 100%;
+	width: 50%;
+	background-color: gray;
+	border-radius: var(--controller-progress-bar-thick);
+}
+
+#controller #button {
+	width: var(--controller-progress-bar-thick);
+    height: var(--controller-progress-bar-thick);
+    display: block;
+    border: calc(var(--controller-progress-bar-thick) / 2) solid;
+    border-radius: 50%;
+	background-color: gray;
+    position: relative;
+    top: calc(var(--controller-progress-bar-thick) / -2);
+    right: calc(var(--controller-progress-bar-thick) * -1);
+    float: right;
+}
+
+#controller #pass, #controller #left {
+	line-height: var(--controller-progress-height);
+	font-size: calc(var(--controller-progress-bar-thick) * 2);
+	width: 20%;
+	text-align: center;
+	opacity: 0.8;
+}
+
+#controller .controls {
+	height: var(--controller-controls-height);
+}
+
+#controller .controls > div {
+	width: 20%;
+	float: left;
+	text-align: center;
+}
+
+#controller .controls > div:active {
+	border-top: 2px solid;
+}
+
+#controller .controls > div img {
+	max-height: var(--controller-controls-height);
+	max-width: 100%;
+}
+
+#controller .controls > div:first-child img, #controller .controls > div:last-child img {
+	max-width: 65%;
+}

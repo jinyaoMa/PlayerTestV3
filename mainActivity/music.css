@@ -4,26 +4,25 @@
 	--music-opacity-off: 0.6;
 }
 
-#music > div:last-child {
+#music .body {
 	padding-top: var(--index-header-height);
 	padding-bottom: var(--navigation-height);
 	min-height: calc(100vh - var(--navigation-height) - var(--index-header-height));
 }
 
-#music > div:first-child {
+#music .header {
 	height: calc(var(--index-header-height) - 1px);
 	background-color: var(--navigation-bg-white);
 	position: fixed;
 	top: 0;
 	width: 100vw;
-	z-index: 1;
 }
 
 #music > div.black {
 	background-color: var(--navigation-bg-black);
 }
 
-#music > div:first-child img {
+#music .header img {
 	border-radius: 50%;
 	margin: calc(var(--index-header-height) * 0.2);
 	height: calc(var(--index-header-height) * 0.6);
@@ -32,11 +31,11 @@
 	opacity: var(--music-opacity-off);
 }
 
-#music > div:first-child img:active {
+#music .header img:active {
 	opacity: var(--music-opacity-on);
 }
 
-#music > div:first-child div {
+#music .header div {
 	vertical-align: top;
 	text-align: center;
 	font-size: calc(var(--index-header-font-size));

@@ -14,12 +14,12 @@ function Navigation() {
 			JSON.parse(localStorage.nightShift)){
 			$('#navigation').addClass('black');
 			for (var i = 0; i < icons.length; i++) {
-				icons[i].src = icons[i].src.replace(/black/, 'white');
+				icons[i].src = icons[i].src.replace(/.black/, '.white');
 			}
 		} else {
 			$('#navigation').removeClass('black');
 			for (var i = 0; i < icons.length; i++) {
-				icons[i].src = icons[i].src.replace(/white/, 'black');
+				icons[i].src = icons[i].src.replace(/.white/, '.black');
 			}
 		}
 	};

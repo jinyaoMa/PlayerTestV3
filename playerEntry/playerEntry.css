@@ -24,5 +24,15 @@
 }
 
 #playerEntry.run {
-	opacity: var(--playerEntry-run-opacity);
+	animation: playerEntryRun 2s linear infinite;
+}
+
+@keyframes playerEntryRun {
+	0% {
+		opacity: var(--playerEntry-run-opacity);
+	} 50% {
+		opacity: var(--playerEntry-stop-opacity);
+	} 100% {
+		opacity: var(--playerEntry-run-opacity);
+	}
 }

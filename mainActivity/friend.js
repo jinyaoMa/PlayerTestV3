@@ -6,15 +6,15 @@ function Friend() {
 	this.refreshColor = function () {
 		if (localStorage.nightShift !== undefined &&
 			JSON.parse(localStorage.nightShift)){
-			$('#friend > div:first').addClass('black');
-			$('#friend > div:first img')[0].src = $('#friend > div:first img')[0].src.replace(/black/, 'white');
+			$('#friend .header').addClass('black');
+			$('#friend .header img')[0].src = $('#friend .header img')[0].src.replace(/.black/, '.white');
 		} else {
-			$('#friend > div:first').removeClass('black');
-			$('#friend > div:first img')[0].src = $('#friend > div:first img')[0].src.replace(/white/, 'black');
+			$('#friend .header').removeClass('black');
+			$('#friend .header img')[0].src = $('#friend .header img')[0].src.replace(/.white/, '.black');
 		}
 	};
 	
-	var scroller = $('#friend > div:last')[0];
+	var scroller = $('#friend .body')[0];
 	Transform(scroller, true);
 	var at = new AlloyTouch({
 		touch: scroller,
@@ -31,7 +31,7 @@ function Friend() {
 	});
 	
 	this.linkDrawer = function (init) { // $('#drawerFriend')
-		$('#friend > div:first img').click(function () {
+		$('#friend .header img').click(function () {
 			if (init !== undefined && init.length === 1) {
 				init.show();
 			}

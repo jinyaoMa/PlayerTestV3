@@ -6,15 +6,15 @@ function Music() {
 	this.refreshColor = function () {
 		if (localStorage.nightShift !== undefined &&
 			JSON.parse(localStorage.nightShift)){
-			$('#music > div:first').addClass('black');
-			$('#music > div:first img')[0].src = $('#music > div:first img')[0].src.replace(/black/, 'white');
+			$('#music .header').addClass('black');
+			$('#music .header img')[0].src = $('#music .header img')[0].src.replace(/.black/, '.white');
 		} else {
-			$('#music > div:first').removeClass('black');
-			$('#music > div:first img')[0].src = $('#music > div:first img')[0].src.replace(/white/, 'black');
+			$('#music .header').removeClass('black');
+			$('#music .header img')[0].src = $('#music .header img')[0].src.replace(/.white/, '.black');
 		}
 	};
 	
-	var scroller = $('#music > div:last')[0];
+	var scroller = $('#music .body')[0];
 	Transform(scroller, true);
 	var at = new AlloyTouch({
 		touch: scroller,
@@ -31,7 +31,7 @@ function Music() {
 	});
 	
 	this.linkDrawer = function (init) { // $('#drawerMusic')
-		$('#music > div:first img').click(function () {
+		$('#music .header img').click(function () {
 			if (init !== undefined && init.length === 1) {
 				init.show();
 			}

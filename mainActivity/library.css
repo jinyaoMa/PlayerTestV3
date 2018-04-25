@@ -4,26 +4,25 @@
 	--library-opacity-off: 0.6;
 }
 
-#library > div:last-child {
+#library .body {
 	padding-top: var(--index-header-height);
 	padding-bottom: var(--navigation-height);
 	min-height: calc(100vh - var(--navigation-height) - var(--index-header-height));
 }
 
-#library > div:first-child {
+#library .header {
 	height: calc(var(--index-header-height) - 1px);
 	background-color: var(--navigation-bg-white);
 	position: fixed;
 	top: 0;
 	width: 100vw;
-	z-index: 1;
 }
 
 #library > div.black {
 	background-color: var(--navigation-bg-black);
 }
 
-#library > div:first-child img {
+#library .header img {
 	border-radius: 50%;
 	margin: calc(var(--index-header-height) * 0.2);
 	height: calc(var(--index-header-height) * 0.6);
@@ -32,11 +31,11 @@
 	opacity: var(--library-opacity-off);
 }
 
-#library > div:first-child img:active {
+#library .header img:active {
 	opacity: var(--library-opacity-on);
 }
 
-#library > div:first-child div {
+#library .header div {
 	vertical-align: top;
 	text-align: center;
 	font-size: calc(var(--index-header-font-size) / 2);
@@ -49,6 +48,6 @@
 	margin: calc(var(--index-header-height) / 4 - var(--library-search-border-width)) calc(var(--index-header-height) / 2);
 }
 
-#library > div:first-child div:active {
+#library .header div:active {
 	opacity: var(--library-opacity-on);
 }

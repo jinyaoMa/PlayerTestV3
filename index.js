@@ -35,11 +35,15 @@ function setupLocalStorage() {
 function refreshColor() {
 	if (localStorage.nightShift !== undefined &&
 		JSON.parse(localStorage.nightShift)){
-		document.body.style.backgroundColor = R.color.black;
-		document.body.style.color = R.color.white;
+		$('.activity').css({
+			'background-color': R.color.black,
+			'color': R.color.white
+		});
 	} else {
-		document.body.style.backgroundColor = R.color.white;
-		document.body.style.color = R.color.black;
+		$('.activity').css({
+			'background-color': R.color.white,
+			'color': R.color.black
+		});
 	}
 	navigation.refreshColor();
 	playerEntry.refreshColor();
@@ -47,6 +51,7 @@ function refreshColor() {
 	music.refreshColor();
 	friend.refreshColor();
 	account.refreshColor();
+	controller.refreshColor();
 }
 
 function linking() {

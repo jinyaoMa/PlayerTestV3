@@ -21,7 +21,7 @@ body > .activity {
 	transform:translateX(100vw);
 }
 
-body > .activity:nth-of-type(2) {
+body > .activity#mainActivity {
 	transform:translateX(0);
 }
 
