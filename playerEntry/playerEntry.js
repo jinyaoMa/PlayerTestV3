@@ -60,12 +60,12 @@ function PlayerEntry(){
 		clearInterval(this.interval);
 	};
 	
-	this.link = function (init) { // $('#playerActivity')
-		if (init === undefined || init.length !== 1) {
+	this.link = function (view) { // $('#playerActivity')
+		if (view === undefined || view.length !== 1) {
 			return;
 		}
 		$('#playerEntry').click(function () {
-			init.show();
+			view.show();
 		});
 	};
 }

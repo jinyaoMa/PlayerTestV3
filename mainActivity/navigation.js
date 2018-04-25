@@ -31,12 +31,12 @@ function Navigation() {
 		}
 	};
 	
-	this.link = function (init) { // $('.activity:first > .container > div')
-		if (init === undefined || init.length !== numberOfNavLinks) {
+	this.link = function (view) { // $('.activity:first > .container > div')
+		if (view === undefined || view.length !== numberOfNavLinks) {
 			return;
 		}
 		
-		var scroller = init.parent()[0];
+		var scroller = view.parent()[0];
 		Transform(scroller, true);
 		
 		var at = new AlloyTouch({
@@ -45,8 +45,8 @@ function Navigation() {
 			target: scroller, 
 			property: "translateX",
 			max: 0,
-			min: init.width() * (init.length - 1) * -1,
-			step: init.width(),
+			min: view.width() * (view.length - 1) * -1,
+			step: view.width(),
 			animationEnd:function(){
 				$('#navigation > div').removeClass('on');
 				$('#navigation > div').eq(this.currentPage).addClass('on');
@@ -84,11 +84,11 @@ function Navigation() {
 		$('#navigation > div').click(function () {
 			$('#navigation > div').removeClass('on');
 			$(this).addClass('on');
-			at.to($(this).index() * init.width() * -1);
+			at.to($(this).index() * view.width() * -1);
 			localStorage.currentPage = $(this).index();
 		});
 		
 		$('#navigation > div').eq(localStorage.currentPage).addClass('on');
-		at.to(localStorage.currentPage * init.width() * -1);
+		at.to(localStorage.currentPage * view.width() * -1);
 	};
 }

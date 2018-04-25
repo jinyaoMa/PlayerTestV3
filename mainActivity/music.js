@@ -30,12 +30,12 @@ function Music() {
 		inertia: false
 	});
 	
-	this.linkDrawer = function (init) { // $('#drawerMusic')
-		if (init === undefined || init.length !== 1) {
+	this.linkDrawer = function (view) { // $('#drawerMusic')
+		if (view === undefined || view.length !== 1) {
 			return;
 		}
 		$('#music .header img').click(function () {
-			init.show();
+			view.show();
 		});
 	};
 }

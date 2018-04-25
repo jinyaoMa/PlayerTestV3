@@ -30,12 +30,12 @@ function Friend() {
 		inertia: false
 	});
 	
-	this.linkDrawer = function (init) { // $('#drawerFriend')
-		if (init === undefined || init.length !== 1) {
+	this.linkDrawer = function (view) { // $('#drawerFriend')
+		if (view === undefined || view.length !== 1) {
 			return;
 		}
 		$('#friend .header img').click(function () {
-			init.show();
+			view.show();
 		});
 	};
 }

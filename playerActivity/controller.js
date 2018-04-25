@@ -24,17 +24,22 @@ function Controller(){
 		}
 	};
 	
-	this.linkMenu = function (init) { // $('#menuController')
-		if (init !== undefined && init.length === 1) {
+	this.linkMenu = function (view) { // $('#menuController')
+		if (view !== undefined && view.length === 1) {
 			return;
 		}
-		$('#playerEntry').click(function () {
-			init.show();
-		});
+		
 	};
 	
-	this.linkAudio = function (init) { // $('#audio')
-		if (init === undefined || init.length !== 1) {
+	this.linkPlaylist = function (view) { // $('#playlistController')
+		if (view !== undefined && view.length === 1) {
+			return;
+		}
+		view.show();
+	};
+	
+	this.linkAudio = function (view) { // $('#audio')
+		if (view === undefined || view.length !== 1) {
 			return;
 		}
 		
@@ -114,6 +119,27 @@ function Controller(){
 		});
 		
 		list.on('touchstart', 'img', function(){
+			
+		});
+		
+		var favourite = $('#controller .favourite');
+		var download = $('#controller .download');
+		var talk = $('#controller .talk');
+		var menu = $('#controller .menu');
+		
+		favourite.on('touchstart', 'img', function(){
+			
+		});
+		
+		download.on('touchstart', 'img', function(){
+			
+		});
+		
+		talk.on('touchstart', 'img', function(){
+			
+		});
+		
+		menu.on('touchstart', 'img', function(){
 			
 		});
 	};

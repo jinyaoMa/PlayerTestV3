@@ -30,20 +30,20 @@ function Library() {
 		inertia: false
 	});
 	
-	this.linkDrawer = function (init) { // $('#drawerLibrary')
+	this.linkDrawer = function (view) { // $('#drawerLibrary')
 		$('#library .header img').click(function () {
-			if (init !== undefined && init.length === 1) {
-				init.show();
+			if (view !== undefined && view.length === 1) {
+				view.show();
 			}
 		});
 	};
 	
-	this.linkSearch = function (init) { // $('#searchActivity')
-		if (init === undefined || init.length !== 1) {
+	this.linkSearch = function (view) { // $('#searchActivity')
+		if (view === undefined || view.length !== 1) {
 			return;
 		}
 		$('#library .header div').click(function () {
-			init.show();
+			view.show();
 		});
 	};
 }
