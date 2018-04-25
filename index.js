@@ -1,6 +1,7 @@
 /* Language resources */
 function R() {}
 R.en = {
+	name: 'Yao Music',
 	library: 'Library',
 	music: 'Music',
 	friend: 'Friend',
@@ -8,6 +9,7 @@ R.en = {
 	search: 'Search'
 };
 R.zh = {
+	name: '耀音乐',
 	library: '库',
 	music: '音乐',
 	friend: '朋友',
@@ -20,6 +22,11 @@ R.string = R.en;
 R.color = {
 	white: 'white',
 	black: 'black'
+};
+
+/* Paths */
+R.path = {
+	assets: 'assets'
 };
 
 /* Functions */
@@ -51,16 +58,20 @@ function refreshColor() {
 	music.refreshColor();
 	friend.refreshColor();
 	account.refreshColor();
+	playerClose.refreshColor();
+	phonograph.refreshColor();
 	controller.refreshColor();
 }
 
 function linking() {
 	navigation.link($('.activity:first > .container > div'));
-	playerEntry.link();
+	playerEntry.link($('#playerActivity'));
 	library.linkDrawer();
 	library.linkSearch();
 	music.linkDrawer();
 	friend.linkDrawer();
 	account.linkDrawer();
+	playerClose.link($('#playerActivity'));
+	phonograph.linkLyric($('#lyric'));
 	controller.linkAudio($('#controller'));
 }

@@ -13,6 +13,12 @@
 	width: 100vw;
 	position: absolute;
 	bottom: 0;
+	animation: controllerShow 0.5s linear;
+}
+
+#controller.hide {
+	transform: translateY(var(--controller-height));
+	animation: controllerHide 0.5s linear;
 }
 
 #controller .options {
@@ -116,4 +122,28 @@
 
 #controller .controls > div:first-child img, #controller .controls > div:last-child img {
 	max-width: 65%;
+}
+
+#controller .talk span {
+	position: absolute;
+	top: 5%;
+	left: calc(50% + (100% - var(--controller-options-height) * 4) / 8 + var(--controller-options-height) / 3);
+	vertical-align: top;
+	font-size: calc(80% / 3);
+}
+
+@keyframes controllerHide {
+	from {
+		transform: none;
+	} to {
+		transform: translateY(var(--controller-height));
+	}
+}
+
+@keyframes controllerShow {
+	from {
+		transform: translateY(var(--controller-height));
+	} to {
+		transform: none;
+	}
 }

@@ -1,0 +1,20 @@
+:root {
+	--playerClose-height: 10vh;
+	--playerClose-icon-height: 6vh;
+	--playerClose-icon-width: 4vh;
+}
+
+#playerClose {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: var(--playerClose-height);
+	width: var(--playerClose-height);
+	opacity: 0.8;
+}
+
+#playerClose img {
+	height: var(--playerClose-icon-height);
+	width: var(--playerClose-icon-width);
+	margin: calc(50% - var(--playerClose-icon-height) / 2) calc(50% - var(--playerClose-icon-width) / 2);
+}

@@ -1,0 +1,97 @@
+:root {
+	--phonograph-header-height: 10vh;
+	--phonograph-body-height: 65vh;
+	--phonograph-disc-height: 25vh;
+	--phonograph-disc-border-width: 5vh;
+}
+
+#phonograph {
+	
+}
+
+#phonograph .header {
+	height: var(--phonograph-header-height);
+	border-bottom: 1px solid;
+}
+
+#phonograph .header .title {
+	width: calc(100% - var(--phonograph-header-height) * 2);
+	margin: 0 var(--phonograph-header-height);
+	font-size: calc(var(--phonograph-header-height) / 2);
+	line-height: 1em;
+	padding-top: calc(var(--phonograph-header-height) / 10);
+	text-align: center;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#phonograph .header .artist{
+	width: calc(100% - var(--phonograph-header-height) * 2);
+	margin: 0 var(--phonograph-header-height);
+	font-size: calc(var(--phonograph-header-height) * 3 / 10);
+	line-height: 1em;
+	padding-bottom: calc(var(--phonograph-header-height) / 10);
+	text-align: center;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#phonograph .body {
+	height: var(--phonograph-body-height);
+}
+
+#phonograph .body .disc {
+	position: fixed;
+	top: calc(var(--phonograph-header-height) + var(--phonograph-body-height) / 4.5);
+	left: calc(50vw - var(--phonograph-disc-border-width) - var(--phonograph-disc-height) / 2);
+	width: var(--phonograph-disc-height);
+	height: var(--phonograph-disc-height);
+	vertical-align: top;
+	border-radius: 50%;
+	border-width: var(--phonograph-disc-border-width);
+	border-style: solid double;
+	border-color: rgba(0,0,0,0.8);
+	background-color: rgba(255,255,255,0.2);
+}
+
+#phonograph .body .disc.reverse {
+	border-width: var(--phonograph-disc-border-width);
+	border-style: solid double;
+	border-color: rgba(255,255,255,0.2);
+}
+
+#phonograph .body .rod {
+	display: block;
+	position: fixed;
+	top: var(--phonograph-header-height);
+	left: calc(50vw - var(--phonograph-body-height) / 6);
+	height: calc(var(--phonograph-body-height) / 3);
+	transform-origin: 50% 10%;
+	transform: rotate(-45deg);
+	animation: phonographRodOff 0.5s linear;
+}
+
+#phonograph .body .rod.on {
+	transform: none;
+	animation: phonographRodOn 0.5s linear;
+}
+
+#phonograph .body .anime {
+	display: block;
+}
+
+@keyframes phonographRodOn {
+	from {
+		transform: rotate(-45deg);
+	} to {
+		transform: none;
+	}
+}
+
+@keyframes phonographRodOff {
+	from {
+		transform: none;
+	} to {
+		transform: rotate(-45deg);
+	}
+}

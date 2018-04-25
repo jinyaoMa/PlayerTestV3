@@ -65,7 +65,7 @@ function PlayerEntry(){
 			return;
 		}
 		$('#playerEntry').click(function () {
-			view.show();
+			view.addClass('open');
 		});
 	};
 }

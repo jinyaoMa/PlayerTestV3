@@ -57,7 +57,7 @@ function Navigation() {
 			bindSelf: false,
 			spring: false,
 			inertia: false,
-			touchEnd:function(evt, v, index){
+			touchEnd: function(evt, v, index){
 				var step_v = index * this.step * -1;
 				var dx = v - step_v;
 

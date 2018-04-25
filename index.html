@@ -13,7 +13,9 @@
 <link rel='stylesheet' type='text/css' href='mainActivity/friend.css'>
 <link rel='stylesheet' type='text/css' href='mainActivity/account.css'>
 
+<link rel='stylesheet' type='text/css' href='playerActivity/playerClose.css'>
 <link rel='stylesheet' type='text/css' href='playerActivity/controller.css'>
+<link rel='stylesheet' type='text/css' href='playerActivity/phonograph.css'>
 
 <link rel='stylesheet' type='text/css' href='index.css'>
 </head>
@@ -30,7 +32,9 @@
 <script src='mainActivity/friend.js'></script>
 <script src='mainActivity/account.js'></script>
 
+<script src='playerActivity/playerClose.js'></script>
 <script src='playerActivity/controller.js'></script>
+<script src='playerActivity/phonograph.js'></script>
 
 <script src='index.js'></script>
 
@@ -81,6 +85,7 @@
 	</div>
 </div>
 
+<!-- Component playerEntry -->
 <div class='entry' id='playerEntry'>
 	<canvas width='320' height='320'>
 		?
@@ -88,12 +93,32 @@
 </div>
 
 <div class='activity' id='playerActivity'>
-	<!-- Component navigation -->
+	<div class='container'>
+		<!-- Component phonograph --><div id='phonograph'>
+			<div class='header'>
+				<div class='title'></div>
+				<div class='artist'></div>
+			</div>
+			<div class='body'>
+				<img class='disc' src='assets/app.icon.png'>
+				<canvas class='anime' width='320' height='320'>
+					?
+				</canvas>
+				<canvas class='rod' width='320' height='320'>
+					?
+				</canvas>
+			</div>
+		</div><!-- Component lyric --><div id='lyric'>
+			
+		</div>
+	</div>
+	
+	<!-- Component controller -->
 	<div id='controller'>
 		<div class='options'>
 			<div class='favourite'><img src='assets/favourite.white.png'></div>
 			<div class='download'><img src='assets/download.white.png'></div>
-			<div class='talk'><img src='assets/talk.white.png'></div>
+			<div class='talk'><span>0</span><img src='assets/talk.white.png'></div>
 			<div class='menu'><img src='assets/menu.white.png'></div>
 		</div>
 		<div class='progress'>
@@ -114,6 +139,11 @@
 			<div class='list'><img src='assets/playlist.white.png'></div>
 		</div>
 	</div>
+	
+	<!-- Component playerClose -->
+	<div class='entry' id='playerClose'>
+		<img src='assets/back.white.png'>
+	</div>
 </div>
 
 <script>
@@ -127,6 +157,8 @@ var library = new Library();
 var music = new Music();
 var friend = new Friend();
 var account = new Account();
+var playerClose = new PlayerClose();
+var phonograph = new Phonograph();
 var controller = new Controller();
 
 /* Prepare */

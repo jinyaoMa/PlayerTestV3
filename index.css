@@ -18,11 +18,17 @@ body > .activity {
 	top: 0;
 	height: 100vh;
 	width: 100vw;
-	transform:translateX(100vw);
+	transform: translateX(100vw);
+	animation: closeActivity 0.5s linear;
 }
 
-body > .activity#playerActivity {
-	transform:translateX(0);
+body > .activity#mainActivity {
+	transform: translateX(0);
+	animation: openActivity 1s linear;
+}
+body > .activity.open {
+	transform: translateX(0);
+	animation: openActivity 0.5s linear;
 }
 
 body > .activity > .container {
@@ -36,4 +42,20 @@ body > .activity > .container > div {
 	width: 100vw;
 	display: inline-block;
 	vertical-align: top;
+}
+
+@keyframes openActivity {
+	from {
+		transform: translateX(100vw);
+	} to {
+		transform: translateX(0);
+	}
+}
+
+@keyframes closeActivity {
+	from {
+		transform: translateX(0);
+	} to {
+		transform: translateX(100vw);
+	}
 }

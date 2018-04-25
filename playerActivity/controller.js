@@ -24,6 +24,14 @@ function Controller(){
 		}
 	};
 	
+	this.hide = function () {
+		$('#controller').addClass('hide');
+	};
+	
+	this.show = function () {
+		$('#controller').removeClass('hide');
+	};
+	
 	this.linkMenu = function (view) { // $('#menuController')
 		if (view !== undefined && view.length === 1) {
 			return;
@@ -52,35 +60,21 @@ function Controller(){
 		var currentY = btn.offset().top;
 		var pass = $('#controller .pass');
 		var left = $('#controller .left');
-		
-		function move(pointer, offsetChecked) {
-			var moveX = pointer.clientX;
-			var moveY = pointer.clientY;
-			if(!offsetChecked || (Math.abs(moveX - currentX) < 20) && (Math.abs(moveY - currentY) < 20)){
-				if(moveX < minLength){
-					cur_bar.css("width", "0%");
-					currentX = minLength;
-				}else if(moveX > maxLength){
-					cur_bar.css("width","100%");
-					currentX = maxLength;
-				}else{
-					var percent = ((moveX - minLength) * 100) / (maxLength - minLength);
-					cur_bar.css("width", percent+"%");
-					currentX = moveX;
-				}
-			}
-		}
 	
-		bar.on('touchstart', '.total', function (e) {
-			move(e.touches[0], false);
-		});
-		
-		bar.on('touchmove', '.total', function (e) {
-			move(e.touches[0], true);
-		});
-		
-		bar.on('touchend', '.total', function (e) {
-			
+		bar.on('touchstart', function (e) {
+			var moveX = e.touches[0].clientX;
+			var moveY = e.touches[0].clientY;
+			if(moveX < minLength){
+				cur_bar.css("width", "0%");
+				currentX = minLength;
+			}else if(moveX > maxLength){
+				cur_bar.css("width","100%");
+				currentX = maxLength;
+			}else{
+				var percent = ((moveX - minLength) * 100) / (maxLength - minLength);
+				cur_bar.css("width", percent+"%");
+				currentX = moveX;
+			}
 		});
 		
 		var mode = $('#controller .mode');
