@@ -21,7 +21,7 @@ body > .activity {
 	transform:translateX(100vw);
 }
 
-body > .activity#mainActivity {
+body > .activity#playerActivity {
 	transform:translateX(0);
 }
 

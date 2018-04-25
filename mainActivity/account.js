@@ -31,10 +31,11 @@ function Account() {
 	});
 	
 	this.linkDrawer = function (init) { // $('#drawerAccount')
+		if (init === undefined || init.length !== 1) {
+			return;
+		}
 		$('#account .header img').click(function () {
-			if (init !== undefined && init.length === 1) {
-				init.show();
-			}
+			init.show();
 		});
 	};
 }

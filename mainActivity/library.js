@@ -39,10 +39,11 @@ function Library() {
 	};
 	
 	this.linkSearch = function (init) { // $('#searchActivity')
+		if (init === undefined || init.length !== 1) {
+			return;
+		}
 		$('#library .header div').click(function () {
-			if (init !== undefined && init.length === 1) {
-				init.show();
-			}
+			init.show();
 		});
 	};
 }

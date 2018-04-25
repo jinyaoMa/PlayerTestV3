@@ -31,10 +31,11 @@ function Friend() {
 	});
 	
 	this.linkDrawer = function (init) { // $('#drawerFriend')
+		if (init === undefined || init.length !== 1) {
+			return;
+		}
 		$('#friend .header img').click(function () {
-			if (init !== undefined && init.length === 1) {
-				init.show();
-			}
+			init.show();
 		});
 	};
 }

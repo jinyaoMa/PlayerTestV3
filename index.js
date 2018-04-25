@@ -62,4 +62,5 @@ function linking() {
 	music.linkDrawer();
 	friend.linkDrawer();
 	account.linkDrawer();
+	controller.linkAudio($('#controller'));
 }

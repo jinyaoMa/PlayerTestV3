@@ -45,12 +45,12 @@
 	float: left;
 }
 
-#controller #bar {
+#controller .bar {
 	height: var(--controller-progress-height);
 	width: 60%;
 }
 
-#controller #total {
+#controller .total {
 	height: var(--controller-progress-bar-thick);
 	margin: calc((var(--controller-progress-height) - var(--controller-progress-bar-thick)) / 2) var(--controller-progress-bar-thick);
 	width: calc(100% - var(--controller-progress-bar-thick) * 2);
@@ -58,14 +58,14 @@
 	border-radius: var(--controller-progress-bar-thick);
 }
 
-#controller #loaded {
+#controller .loaded {
 	height: 100%;
 	width: 90%;
 	background-color: lightgray;
 	border-radius: var(--controller-progress-bar-thick);
 }
 
-#controller #current {
+#controller .current {
 	position: relative;
 	top: -100%;
 	height: 100%;
@@ -74,7 +74,7 @@
 	border-radius: var(--controller-progress-bar-thick);
 }
 
-#controller #button {
+#controller .button {
 	width: var(--controller-progress-bar-thick);
     height: var(--controller-progress-bar-thick);
     display: block;
@@ -87,7 +87,7 @@
     float: right;
 }
 
-#controller #pass, #controller #left {
+#controller .pass, #controller .left {
 	line-height: var(--controller-progress-height);
 	font-size: calc(var(--controller-progress-bar-thick) * 2);
 	width: 20%;

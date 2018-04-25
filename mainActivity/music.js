@@ -31,10 +31,11 @@ function Music() {
 	});
 	
 	this.linkDrawer = function (init) { // $('#drawerMusic')
+		if (init === undefined || init.length !== 1) {
+			return;
+		}
 		$('#music .header img').click(function () {
-			if (init !== undefined && init.length === 1) {
-				init.show();
-			}
+			init.show();
 		});
 	};
 }
