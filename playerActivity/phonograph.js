@@ -58,7 +58,7 @@ function Phonograph(){
 		paint.closePath();
 		
 		paint.beginPath();
-		paint.shadowBlur = 32;
+		paint.shadowBlur = 8;
 		paint.strokeStyle = 'black';
 		paint.lineWidth = 8;
 		paint.moveTo(220,220);

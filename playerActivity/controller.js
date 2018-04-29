@@ -83,7 +83,7 @@ function Controller(){
 		var next = $('#controller .next');
 		var list = $('#controller .list');
 		
-		play.on('touchstart', 'img', function(e){
+		play.on('click', 'img', function(e){
 			var icon = $(this)[0];
 			if (icon.src === icon.src.replace(/play./, 'pause.')) {
 				icon.src = icon.src.replace(/pause./, 'play.');
@@ -92,7 +92,7 @@ function Controller(){
 			}
 		});
 		
-		prev.on('touchstart', 'img', function(){
+		prev.on('click', 'img', function(){
 			if (false) {
 				
 			} else {
@@ -100,7 +100,7 @@ function Controller(){
 			}
 		});
 		
-		next.on('touchstart', 'img', function(){
+		next.on('click', 'img', function(){
 			if (false) {
 				
 			} else {
@@ -108,11 +108,11 @@ function Controller(){
 			}
 		});
 		
-		mode.on('touchstart', 'img', function(){
+		mode.on('click', 'img', function(){
 			
 		});
 		
-		list.on('touchstart', 'img', function(){
+		list.on('click', 'img', function(){
 			
 		});
 		
@@ -121,19 +121,19 @@ function Controller(){
 		var talk = $('#controller .talk');
 		var menu = $('#controller .menu');
 		
-		favourite.on('touchstart', 'img', function(){
+		favourite.on('click', 'img', function(){
 			
 		});
 		
-		download.on('touchstart', 'img', function(){
+		download.on('click', 'img', function(){
 			
 		});
 		
-		talk.on('touchstart', 'img', function(){
+		talk.on('click', 'img', function(){
 			
 		});
 		
-		menu.on('touchstart', 'img', function(){
+		menu.on('click', 'img', function(){
 			
 		});
 	};

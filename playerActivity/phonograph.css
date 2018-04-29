@@ -12,6 +12,9 @@
 #phonograph .header {
 	height: var(--phonograph-header-height);
 	border-bottom: 1px solid;
+	position: absolute;
+	top: 0;
+	width: 100vw;
 }
 
 #phonograph .header .title {
@@ -42,7 +45,7 @@
 
 #phonograph .body .disc {
 	position: fixed;
-	top: calc(var(--phonograph-header-height) + var(--phonograph-body-height) / 4.5);
+	top: calc(var(--phonograph-header-height) + var(--phonograph-body-height) / 7.5);
 	left: calc(50vw - var(--phonograph-disc-border-width) - var(--phonograph-disc-height) / 2);
 	width: var(--phonograph-disc-height);
 	height: var(--phonograph-disc-height);
@@ -63,7 +66,7 @@
 #phonograph .body .rod {
 	display: block;
 	position: fixed;
-	top: var(--phonograph-header-height);
+	top: calc(var(--phonograph-header-height) - var(--phonograph-body-height) / 30 + 1px);
 	left: calc(50vw - var(--phonograph-body-height) / 6);
 	height: calc(var(--phonograph-body-height) / 3);
 	transform-origin: 50% 10%;
@@ -72,7 +75,7 @@
 }
 
 #phonograph .body .rod.on {
-	transform: none;
+	transform: rotate(-10deg);
 	animation: phonographRodOn 0.5s linear;
 }
 
@@ -84,13 +87,13 @@
 	from {
 		transform: rotate(-45deg);
 	} to {
-		transform: none;
+		transform: rotate(-10deg);
 	}
 }
 
 @keyframes phonographRodOff {
 	from {
-		transform: none;
+		transform: rotate(-10deg);
 	} to {
 		transform: rotate(-45deg);
 	}

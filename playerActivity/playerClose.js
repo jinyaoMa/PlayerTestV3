@@ -16,7 +16,7 @@ function PlayerClose(){
 		if (view === undefined || view.length !== 1) {
 			return;
 		}
-		$('#playerClose').on('touchstart', function () {
+		$('#playerClose').on('click', function () {
 			view.removeClass('open');
 		});
 	}
